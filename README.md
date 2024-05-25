@@ -24,6 +24,7 @@ Create an .env file containing:
 
 ```
 DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
+PORT="8080"
 ```
 
 And start:
@@ -46,4 +47,10 @@ You can now check its content with:
 
 ```
 bunx prisma studio
+```
+
+Start listening in the server in port 8080:
+
+```
+bun run src/server.ts
 ```
