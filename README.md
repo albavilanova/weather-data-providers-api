@@ -1,18 +1,49 @@
-# Backend en Typescript, Express y Prisma
+# Weather Data Providers API
 
-Se trata de hacer un _backend_ usando Typescript, Express y Prisma. El _backend_ implementado en clase es el modelo a seguir. Para alumnos que lo hacen por primera vez y sienten algo de incomodidad, lo ideal es usar el modelo de guía y hacer un _backend_ cercano al original de tal manera que la práctica sea un repaso a fondo. Para los que estén más cómodos, lo ideal es innovar en algun aspecto y salirse parcialmente del modelo en ciertos momentos o explorar algún interés personal. El modelo de datos es directamente la práctica anterior.
+This repository will be the API to retrieve information of different weather data providers using the database that was created in advance in https://github.com/albavilanova/weather-data-providers.
 
-Al usar Prisma, es quizás buena idea explorar proveedores de Prisma que no sean precisamente Postgres, ya que el coste de hacerlo es mínimo (aunque esto no es obligatorio para nada). Aparte de los proveedores locales alternativos a Postgres, existen también opciones en la nube equivalentes a Postgres como [PlanetScale](https://www.prisma.io/docs/guides/database/planetscale), [CockroachDB](https://www.prisma.io/docs/guides/database/cockroachdb) o [Supabase](https://www.prisma.io/docs/guides/database/supabase), bien explicadas en la documentación de Prisma.
+## Initialization
 
-## Entregable
+Create and run the Postgres container by using:
 
-Como anteriormente, para hacer esta práctica hay que:
-- Hacer un _fork_ de este repositorio.
-- Trabajar en el _fork_ haciendo commits regularmente (una práctica que aparece entera en un solo commit tendrá una nota muy baja o cero, hay que mostrar todo el proceso intermedio).
-- Al finalizar, se debe crear un `ZIP` del repositorio (que incluya el fichero `.env`!) y entregarlo en el [Campus Online de UPC School](https://talent.upc.edu) (habrá una tarea preparada para ello).
+```
+docker compose -f compose.yml up
+```
 
-El entregable es el código del proyecto, incluyendo:
-- `docker-compose.yml` si la base de datos corre bajo Docker.
-- El código completo del servidor.
-- Un fichero exportado de [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) con la lista de _endpoints_ que se han probado. (Esto es **extremadamente** relevante porque la corrección del backend, de no tener este fichero, es un trabajo muchísimo más tedioso!).
-- Si se necesitan credenciales para acceder a servicios de cloud (o incluso localmente), es importante incluir en el ZIP del campus el fichero `.env` con éstas. Es muy importante no subir ese fichero en GitHub (es decir, incluirlo en `.gitignore`).
+Get the container ID (hash) of the running container by: 
+``` 
+docker ps -a
+```
+
+And proceed to inspect it to find the corresponding IP address:
+```
+docker inspect <hash>
+```
+
+Create an .env file containing:
+
+```
+DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
+```
+
+And start:
+```
+docker start <hash>
+``` 
+
+Install the dependencies, generate and push the schema and seed the database: 
+
+```
+bun install
+bunx prisma generate
+bunx prisma db push
+bunx prisma db seed
+```
+
+This will create two data providers - one with one product and another one with two - two users and a review for one of the datasets.
+
+You can now check its content with:
+
+```
+bunx prisma studio
+```
