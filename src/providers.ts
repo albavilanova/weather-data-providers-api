@@ -4,12 +4,12 @@ import { getProvidersByArgs } from "./main";
 const router = Router();
 
 router.get("/", async (req, res) => {
-    try {
-      const providers = await getProvidersByArgs();
-      res.status(200).json({ providers });
-    } catch (e) {
-      res.status(500).json({ error: "Internal Error" });
-    }
-  });
+  try {
+    const providers = await getProvidersByArgs(req.query);
+    res.status(200).json({ providers });
+  } catch (e) {
+    res.status(500).json({ error: "Internal Error" });
+  }
+});
 
 export default router;
