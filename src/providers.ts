@@ -47,4 +47,33 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/", async (req, res) => {
+  try {
+    const providers = await getProvidersByArgs(req.query);
+    console.log(providers);
+    if (providers.length > 0) {
+      let names: string[] = [];
+      for (const provider of providers) {
+        await db.provider.delete({
+          where: {
+            providerId: provider.providerId,
+          },
+        });
+        names.push(provider.name);
+      }
+      res.status(200).json({
+        message:
+        names.length === 1
+            ? `Provider ${names} was successfully deleted`
+            : `Providers ${names} were successfully deleted`,
+      });
+    } else {
+      res.status(404).json({ message: "Not found." });
+    }
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: "Internal error." });
+  }
+});
+
 export default router;
