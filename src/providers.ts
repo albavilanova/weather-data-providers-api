@@ -1,25 +1,26 @@
 import { Router } from "express";
 import { checkArgs, getProvidersByArgs } from "./main";
 import db from "./db";
+import { catchErrors } from "./errors";
+import { send } from "./response";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-  try {
+router.get(
+  "/",
+  catchErrors(async (req, res) => {
     const providers = await getProvidersByArgs(req.query);
     if (providers.length > 0) {
-      res.status(200).json({ providers });
+      send(res).ok(providers);
     } else {
-      res.status(404).json({ message: "Not found." });
+      send(res).notFound();
     }
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: "Internal error." });
-  }
-});
+  })
+);
 
-router.post("/", async (req, res) => {
-  try {
+router.post(
+  "/",
+  catchErrors(async (req, res) => {
     const name = req.query.name;
     const headquarters = req.query.headquarters;
     const url = req.query.url;
@@ -27,7 +28,7 @@ router.post("/", async (req, res) => {
     const args = ["name", "headquarters", "url"];
     [name, headquarters, url].some(function (prop, index) {
       if (prop === undefined || typeof prop !== "string") {
-        return res.status(400).json({ message: `Not found ${args[index]}` });
+        return send(res).badRequest(`Not found ${args[index]}`);
       }
     });
 
@@ -38,15 +39,13 @@ router.post("/", async (req, res) => {
         url,
       },
     });
-    res.status(200).json({ newProvider });
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: "Couldn't create provider, try later." });
-  }
-});
+    send(res).createOk(newProvider);
+  })
+);
 
-router.delete("/", async (req, res) => {
-  try {
+router.delete(
+  "/",
+  catchErrors(async (req, res) => {
     const providers = await getProvidersByArgs(req.query);
     if (providers.length > 0) {
       let names: string[] = [];
@@ -58,28 +57,25 @@ router.delete("/", async (req, res) => {
         });
         names.push(provider.name);
       }
-      res.status(200).json({
-        message:
-          names.length === 1
-            ? `Provider ${names} was successfully deleted`
-            : `Providers ${names} were successfully deleted`,
-      });
+      send(res).messageOk(
+        names.length === 1
+          ? `Provider ${names} was successfully deleted`
+          : `Providers ${names} were successfully deleted`
+      );
     } else {
-      res.status(404).json({ message: "Not found." });
+      send(res).notFound();
     }
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: "Internal error." });
-  }
-});
+  })
+);
 
-router.put("/", async (req, res) => {
-  try {
+router.put(
+  "/",
+  catchErrors(async (req, res) => {
     const args = ["id", "name", "headquarters", "url"];
     const conditions = checkArgs(req.query, args);
 
     if (!conditions.hasOwnProperty("id")) {
-      res.status(400).json({ error: "Provider id must be passed." });
+      send(res).badRequest("Provider id must be passed.");
     }
 
     // Check if provider exists
@@ -100,16 +96,11 @@ router.put("/", async (req, res) => {
           headquarters: conditions["headquarters"],
         },
       });
-      res.status(200).json({ updatedProvider });
+      send(res).ok(updatedProvider);
     } else {
-      res.status(400).json({
-        error: `Provider with id ${conditions["id"]} does not exist in database`,
-      });
+      send(res).notFound();
     }
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: "Internal error." });
-  }
-});
+  })
+);
 
 export default router;
