@@ -241,9 +241,17 @@ http://localhost:8080/providers?id=3&name=Meteomatics AG
 
 Usage:
 
+`PUT` `/products`
+
 Query parameters:
 
+`name` (optional), `providerName` (optional), `variables` (optional), `startDate` (optional), `endDate` (optional) and `formats` (optional)
+
 Examples: 
+
+```
+http://localhost:8080/products?id=2&variables=nitrogen dioxide, methane&formats=grib, netcdf
+```
 
 **Update reviews**
 

@@ -36,6 +36,7 @@ router.post(
       "endDate",
       "formats",
     ];
+
     [name, providerName, variables, startDate, endDate, formats].some(function (
       prop,
       index
@@ -100,6 +101,93 @@ router.delete(
           ? `Product with ID ${ids} was successfully deleted`
           : `Products with IDs ${ids} were successfully deleted`
       );
+    } else {
+      send(res).notFound();
+    }
+  })
+);
+
+router.put(
+  "/",
+  catchErrors(async (req, res) => {
+    const args = [
+      "id",
+      "name",
+      "providerName",
+      "variables",
+      "startDate",
+      "endDate",
+      "formats",
+    ];
+    const conditions = checkArgs(req.query, args);
+
+    if (!conditions.hasOwnProperty("id")) {
+      send(res).badRequest("Product ID must be passed.");
+    }
+
+    // Check if product exists
+    const id = parseInt(conditions["id"]);
+    const product = await db.product.findUnique({
+      where: {
+        productId: id,
+      },
+    });
+
+    if (product !== null) {
+      let provider;
+      if (conditions.hasOwnProperty("providerName")) {
+        // Get provider
+        provider = await db.provider.findUnique({
+          where: {
+            name: conditions["providerName"],
+          },
+        });
+      }
+
+      // Get variables as string array if they have been passed
+      let variablesArray: string[] = [];
+      if (conditions.hasOwnProperty("variables")) {
+        variablesArray = conditions["variables"]
+          .split(",")
+          .map((str) => str.trim());
+      }
+      let formatsArray: string[] = [];
+      if (conditions.hasOwnProperty("formats")) {
+        formatsArray = conditions["formats"]
+          .split(",")
+          .map((str) => str.trim());
+      }
+
+      // Create dates
+      let startDateJS;
+      let endDateJS;
+      if (conditions.hasOwnProperty("startDate")) {
+        startDateJS = new Date(conditions["startDate"]);
+        console.log(`Start date converted to ${startDateJS}`);
+      }
+      if (conditions.hasOwnProperty("endDate")) {
+        endDateJS = new Date(conditions["endDate"]);
+        console.log(`End date converted to ${endDateJS}`);
+      }
+
+      const updatedProduct = await db.product.update({
+        where: {
+          productId: id,
+        },
+        data: {
+          name: conditions["name"],
+          providerId:
+            provider !== null && provider !== undefined
+              ? provider.providerId
+              : undefined,
+          variables: variablesArray.length > 0 ? variablesArray : undefined,
+          startDate: startDateJS,
+          endDate: endDateJS,
+          formats: formatsArray.length > 0 ? formatsArray : undefined,
+        },
+      });
+
+      send(res).ok(updatedProduct);
     } else {
       send(res).notFound();
     }

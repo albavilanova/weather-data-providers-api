@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T18:13:51.226Z",
+    "dateExported": "2024-06-01T19:01:48.674Z",
     "version": "1.2",
     "folders": [
         {
@@ -584,6 +584,35 @@
             ]
         },
         {
+            "_id": "446094e4-8078-4c58-9222-166b2f65559a",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Update product",
+            "url": "http://localhost:8080/products?id=2&variables=nitrogen dioxide, methane&formats=grib, netcdf",
+            "method": "PUT",
+            "sortNum": 247500,
+            "created": "2024-06-01T18:30:37.853Z",
+            "modified": "2024-06-01T18:35:07.268Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "variables",
+                    "value": "nitrogen dioxide, methane",
+                    "isPath": false
+                },
+                {
+                    "name": "formats",
+                    "value": "grib, netcdf",
+                    "isPath": false
+                }
+            ]
+        },
+        {
             "_id": "0e5fe5c5-525c-4c42-9a98-348e3d575e7a",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
@@ -603,5 +632,5 @@
             ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtzqPW4bsQBbi7sg6kfPJNzwb9xGTUAD8RIIaVR_wM1XwPXpLcdd0O77dxYM-hp0sGug"
+    "ref": "NOFH7gbNbPQ9mOLilNAtznyhTJlvOAduIKFhN1pM5IqoyUlOxFRwZDviAkK8T5dv5oerHNCyncTGsz8rbbpfPw"
 }
