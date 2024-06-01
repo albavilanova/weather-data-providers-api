@@ -157,9 +157,22 @@ http://localhost:8080/providers?headquarters=Czech Republic
 
 Usage:
 
+`GET` `/products`
+
 Query parameters:
 
-Examples: 
+`name` (optional), `providerName` (optional), `variables` (optional), `startDate` (optional), `endDate` (optional) and `formats` (optional)
+
+Examples:
+
+```
+http://localhost:8080/products
+http://localhost:8080/products?name=U.S. Air Quality Forecasts
+http://localhost:8080/products?providerName=CustomWeather
+http://localhost:8080/products?variables=wind speed, wind direction
+http://localhost:8080/products?providerName=CustomWeather&variables=aqi
+http://localhost:8080/products?startDate=2009-01-01&formats=csv
+```
 
 **Find reviews**
 
@@ -184,9 +197,17 @@ http://localhost:8080/reviews?rating=10
 
 Usage:
 
+`PUT` `/users`
+
 Query parameters:
 
+`id` (mandatory), `firstName` (optional), `lastName` (optional), `email` (optional), `organization` (optional) and `position` (optional)
+
 Examples: 
+
+```
+http://localhost:8080/users?id=clwwck7qc0001107lc8n38739&organization=Ayala&position=Senior web developer
+```
 
 **Update providers**
 
@@ -208,17 +229,9 @@ http://localhost:8080/providers?id=3&name=Meteomatics AG
 
 Usage:
 
-`PUT` `/users`
-
 Query parameters:
 
-`id` (mandatory), `firstName` (optional), `lastName` (optional), `email` (optional), `organization` (optional) and `position` (optional)
-
 Examples: 
-
-```
-http://localhost:8080/users?id=clwwck7qc0001107lc8n38739&organization=Ayala&position=Senior web developer
-```
 
 **Update reviews**
 
@@ -277,9 +290,20 @@ http://localhost:8080/providers?headquarters=Czech Republic
 
 Usage:
 
+`DELETE` `/products`
+
 Query parameters:
 
+`name` (optional), `providerName` (optional), `variables` (optional), `startDate` (optional), `endDate` (optional) and `formats` (optional)
+
 Examples: 
+
+```
+http://localhost:8080/products?name=U.S. Air Quality Forecasts
+http://localhost:8080/products?providerName=CustomWeather
+http://localhost:8080/products?variables=wind speed, wind direction
+http://localhost:8080/products?providerName=CustomWeather&variables=aqi
+```
 
 **Delete reviews**
 
