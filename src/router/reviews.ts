@@ -61,7 +61,7 @@ router.post(
       });
       send(res).createOk(newReview);
     } else {
-      return send(res).badRequest("User or product does not exist");
+      send(res).badRequest("User or product does not exist");
     }
   })
 );

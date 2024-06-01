@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T17:33:09.918Z",
+    "dateExported": "2024-06-01T18:13:51.226Z",
     "version": "1.2",
     "folders": [
         {
@@ -540,6 +540,50 @@
             ]
         },
         {
+            "_id": "88a5b48f-3c3e-41c9-9700-4544d2fa4b36",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Create new product",
+            "url": "http://localhost:8080/products?providerName=CustomWeather&name=Wind atlas&variables=wind speed, wind direction&startDate=2019-01-01&endDate=2020-12-31&formats=csv",
+            "method": "POST",
+            "sortNum": 245000,
+            "created": "2024-06-01T18:12:56.740Z",
+            "modified": "2024-06-01T18:12:56.740Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "providerName",
+                    "value": "CustomWeather",
+                    "isPath": false
+                },
+                {
+                    "name": "name",
+                    "value": "Wind atlas",
+                    "isPath": false
+                },
+                {
+                    "name": "variables",
+                    "value": "wind speed, wind direction",
+                    "isPath": false
+                },
+                {
+                    "name": "startDate",
+                    "value": "2019-01-01",
+                    "isPath": false
+                },
+                {
+                    "name": "endDate",
+                    "value": "2020-12-31",
+                    "isPath": false
+                },
+                {
+                    "name": "formats",
+                    "value": "csv",
+                    "isPath": false
+                }
+            ]
+        },
+        {
             "_id": "0e5fe5c5-525c-4c42-9a98-348e3d575e7a",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
@@ -559,5 +603,5 @@
             ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtzphs7Oh8B8IMeijJHu4Rd5y7T5yy_Vj4vKqILJ_6kEcMMA2M583_nzwdS7-p_R3EaQ"
+    "ref": "NOFH7gbNbPQ9mOLilNAtzqPW4bsQBbi7sg6kfPJNzwb9xGTUAD8RIIaVR_wM1XwPXpLcdd0O77dxYM-hp0sGug"
 }
