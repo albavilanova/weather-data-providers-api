@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T14:11:40.543Z",
+    "dateExported": "2024-06-01T14:32:36.599Z",
     "version": "1.2",
     "folders": [
         {
@@ -101,44 +101,6 @@
             ]
         },
         {
-            "_id": "a91d7c9a-d62e-465c-95c0-1f92ef316634",
-            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
-            "name": "Delete providers from Czech Republic",
-            "url": "http://localhost:8080/providers?headquarters=Czech Republic",
-            "method": "DELETE",
-            "sortNum": 50000,
-            "created": "2024-05-26T17:52:40.344Z",
-            "modified": "2024-05-26T17:58:51.328Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "headquarters",
-                    "value": "Czech Republic",
-                    "isPath": false
-                }
-            ]
-        },
-        {
-            "_id": "5641c14c-33cc-47b6-985d-cba194c410ee",
-            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
-            "name": "Delete CustomWeather provider",
-            "url": "http://localhost:8080/providers?name=CustomWeather",
-            "method": "DELETE",
-            "sortNum": 60000,
-            "created": "2024-05-26T17:59:25.536Z",
-            "modified": "2024-05-26T17:59:25.536Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "name",
-                    "value": "CustomWeather",
-                    "isPath": false
-                }
-            ]
-        },
-        {
             "_id": "2eff367b-454c-49f5-b8eb-08d38fff6ad8",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
@@ -163,6 +125,25 @@
             ]
         },
         {
+            "_id": "a91d7c9a-d62e-465c-95c0-1f92ef316634",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Delete providers from Czech Republic",
+            "url": "http://localhost:8080/providers?headquarters=Czech Republic",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-05-26T17:52:40.344Z",
+            "modified": "2024-05-26T17:58:51.328Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "headquarters",
+                    "value": "Czech Republic",
+                    "isPath": false
+                }
+            ]
+        },
+        {
             "_id": "bdca4fd2-3993-4f6a-bc72-48c0b1ee56c2",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
@@ -178,7 +159,7 @@
             "_id": "0e944885-60ff-4ca9-9990-839ac1947587",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
-            "name": "Get review with rating 8",
+            "name": "Get review with rating 10",
             "url": "http://localhost:8080/reviews?rating=10",
             "method": "GET",
             "sortNum": 90000,
@@ -233,25 +214,6 @@
             ]
         },
         {
-            "_id": "ec8f3679-a39b-4e02-af15-1f4178e113a3",
-            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
-            "name": "Delete providers with rating 10",
-            "url": "http://localhost:8080/reviews?rating=10",
-            "method": "DELETE",
-            "sortNum": 110000,
-            "created": "2024-06-01T13:50:00.685Z",
-            "modified": "2024-06-01T13:50:00.685Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "rating",
-                    "value": "10",
-                    "isPath": false
-                }
-            ]
-        },
-        {
             "_id": "c7cc94f1-15e6-40e7-a4be-fcd52f11c2ef",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
@@ -284,7 +246,26 @@
                     "isPath": false
                 }
             ]
+        },
+        {
+            "_id": "ec8f3679-a39b-4e02-af15-1f4178e113a3",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Delete reviews with rating 8",
+            "url": "http://localhost:8080/reviews?rating=8",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2024-06-01T13:50:00.685Z",
+            "modified": "2024-06-01T14:32:00.351Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "rating",
+                    "value": "8",
+                    "isPath": false
+                }
+            ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtzrheYSWe457ASLKVRSGnvk4K-liyjXmUnYfa2t52wFVmD6G5CGLEaRM6IA6yHYaolA"
+    "ref": "NOFH7gbNbPQ9mOLilNAtzhJEAz6cHEQyzLTB9f4DEnOe8P--zYpLd2ihVIts-RfGimv0yCZB1L2UWxoSOSw0fQ"
 }

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { checkArgs, getReviewsByArgs } from "./main";
-import db from "./db";
-import { catchErrors } from "./errors";
-import { send } from "./response";
+import { checkArgs, getReviewsByArgs } from "../main";
+import db from "../db";
+import { catchErrors } from "../errors";
+import { send } from "../response";
 
 const router = Router();
 
@@ -48,8 +48,6 @@ router.post(
         name: productName,
       },
     });
-    console.log(product);
-    console.log(user !== null, product !== null);
     // Create new review
     if (user !== null && product !== null) {
       const newReview = await db.review.create({

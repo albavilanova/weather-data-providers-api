@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { checkArgs, getProvidersByArgs } from "./main";
-import db from "./db";
-import { catchErrors } from "./errors";
-import { send } from "./response";
+import { checkArgs, getProvidersByArgs } from "../main";
+import db from "../db";
+import { catchErrors } from "../errors";
+import { send } from "../response";
 
 const router = Router();
 

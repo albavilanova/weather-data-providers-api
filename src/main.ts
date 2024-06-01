@@ -44,7 +44,6 @@ export const getReviewsByArgs = async function (query: any) {
       rating = parseInt(conditions["rating"]);
     }
 
-    console.log(await db.review.findMany({}));
     // Find reviews
     reviews = await db.review.findMany({
       where: {
