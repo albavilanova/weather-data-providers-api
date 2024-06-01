@@ -319,7 +319,7 @@ Query parameters:
 Examples: 
 
 ```
-http://localhost:8080/products?name=U.S. Air Quality Forecasts
+http://localhost:8080/products?name=Historical Forecast Data
 http://localhost:8080/products?providerName=CustomWeather
 http://localhost:8080/products?variables=wind speed, wind direction
 http://localhost:8080/products?providerName=CustomWeather&variables=aqi

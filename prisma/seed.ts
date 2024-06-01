@@ -93,25 +93,43 @@ const users = await db.user.createMany({
 });
 console.log("Users were added");
 
-// Add review
+// Add reviews
 const user = await db.user.findUnique({
   where: {
     email: "alba.vilanova@gmail.com",
   },
 });
-const product = await db.product.findUnique({
-  where: {
-    name: "Historical Forecast Data",
-  },
-});
-if (user !== null && product !== null) {
-  const reviews = await db.review.create({
-    data: {
-      title: "Very accurate",
-      rating: 10,
-      userId: user.userId,
-      productId: product.productId,
+if (user !== null) {
+  const firstProduct = await db.product.findUnique({
+    where: {
+      name: "Historical Forecast Data",
     },
   });
-  console.log("A review was added");
+  if (firstProduct !== null) {
+    await db.review.create({
+      data: {
+        title: "Very accurate",
+        rating: 10,
+        userId: user.userId,
+        productId: firstProduct.productId,
+      },
+    });
+  }
+
+  const secondProduct = await db.product.findUnique({
+    where: {
+      name: "U.S. Air Quality Forecasts",
+    },
+  });
+  if (secondProduct !== null) {
+    await db.review.create({
+      data: {
+        title: "Useful",
+        rating: 7,
+        userId: user.userId,
+        productId: secondProduct.productId,
+      },
+    });
+  }
+  console.log("Two reviews were added");
 }
