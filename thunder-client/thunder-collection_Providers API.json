@@ -1,0 +1,290 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Providers API",
+    "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+    "dateExported": "2024-06-01T14:11:40.543Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Providers",
+            "containerId": "",
+            "created": "2024-06-01T12:51:37.733Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Reviews",
+            "containerId": "",
+            "created": "2024-06-01T12:52:00.777Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "8b3efcbc-ca07-4b93-a84c-d23a35a65de0",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Get all providers",
+            "url": "http://localhost:8080/providers",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-25T17:59:00.570Z",
+            "modified": "2024-05-26T19:26:51.593Z",
+            "headers": []
+        },
+        {
+            "_id": "2555a1ed-8a99-48fc-9c0a-bd39cafb2c48",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Get CustomWeather provider",
+            "url": "http://localhost:8080/providers?name=CustomWeather",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-25T18:40:01.706Z",
+            "modified": "2024-05-25T18:40:01.706Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "CustomWeather",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "5c07c00f-1b37-4e8e-a636-79195f590ee4",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Get providers from Czech Republic",
+            "url": "http://localhost:8080/providers?headquarters=Czech Republic",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-25T18:41:37.965Z",
+            "modified": "2024-05-26T10:14:45.438Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "headquarters",
+                    "value": "Czech Republic",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2e05df8e-470a-4ebd-968a-df8cd343fb08",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Create new provider",
+            "url": "http://localhost:8080/providers?name=Meteomatics&headquarters=Switzerland&url=https://www.meteomatics.com/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-05-26T10:14:18.390Z",
+            "modified": "2024-05-26T17:58:14.806Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "Meteomatics",
+                    "isPath": false
+                },
+                {
+                    "name": "headquarters",
+                    "value": "Switzerland",
+                    "isPath": false
+                },
+                {
+                    "name": "url",
+                    "value": "https://www.meteomatics.com/",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "a91d7c9a-d62e-465c-95c0-1f92ef316634",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Delete providers from Czech Republic",
+            "url": "http://localhost:8080/providers?headquarters=Czech Republic",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-26T17:52:40.344Z",
+            "modified": "2024-05-26T17:58:51.328Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "headquarters",
+                    "value": "Czech Republic",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "5641c14c-33cc-47b6-985d-cba194c410ee",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Delete CustomWeather provider",
+            "url": "http://localhost:8080/providers?name=CustomWeather",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-05-26T17:59:25.536Z",
+            "modified": "2024-05-26T17:59:25.536Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "CustomWeather",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2eff367b-454c-49f5-b8eb-08d38fff6ad8",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "c00cdb89-0139-4bfd-95d0-e3135ebbe96f",
+            "name": "Update provider",
+            "url": "http://localhost:8080/providers?id=3&name=Meteomatics AG",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-05-26T19:15:30.821Z",
+            "modified": "2024-05-26T19:42:44.285Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                },
+                {
+                    "name": "name",
+                    "value": "Meteomatics AG",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "bdca4fd2-3993-4f6a-bc72-48c0b1ee56c2",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Get all reviews",
+            "url": "http://localhost:8080/reviews",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-01T12:52:27.340Z",
+            "modified": "2024-06-01T12:52:27.340Z",
+            "headers": []
+        },
+        {
+            "_id": "0e944885-60ff-4ca9-9990-839ac1947587",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Get review with rating 8",
+            "url": "http://localhost:8080/reviews?rating=10",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-06-01T13:13:50.675Z",
+            "modified": "2024-06-01T13:13:50.675Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "rating",
+                    "value": "10",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "66c021f5-d594-457e-bfbd-f6263e47c791",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Create new review",
+            "url": "http://localhost:8080/reviews?productName=U.S. Air Quality Forecasts&email=david.gomez@gmail.com&title=Excellent dataset&rating=8&message=Very useful, it would be better if more variables were included",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-06-01T13:18:11.918Z",
+            "modified": "2024-06-01T13:20:26.221Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "productName",
+                    "value": "U.S. Air Quality Forecasts",
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "david.gomez@gmail.com",
+                    "isPath": false
+                },
+                {
+                    "name": "title",
+                    "value": "Excellent dataset",
+                    "isPath": false
+                },
+                {
+                    "name": "rating",
+                    "value": "8",
+                    "isPath": false
+                },
+                {
+                    "name": "message",
+                    "value": "Very useful, it would be better if more variables were included",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ec8f3679-a39b-4e02-af15-1f4178e113a3",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Delete providers with rating 10",
+            "url": "http://localhost:8080/reviews?rating=10",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-06-01T13:50:00.685Z",
+            "modified": "2024-06-01T13:50:00.685Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "rating",
+                    "value": "10",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c7cc94f1-15e6-40e7-a4be-fcd52f11c2ef",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "b24c675c-a1a8-4625-887b-64cc949b6be1",
+            "name": "Update review",
+            "url": "http://localhost:8080/reviews?id=1&rating=5&message=I have noticed that the data have wrong units&title=Wrong units",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2024-06-01T13:56:58.642Z",
+            "modified": "2024-06-01T13:56:58.642Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "rating",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "message",
+                    "value": "I have noticed that the data have wrong units",
+                    "isPath": false
+                },
+                {
+                    "name": "title",
+                    "value": "Wrong units",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "NOFH7gbNbPQ9mOLilNAtzrheYSWe457ASLKVRSGnvk4K-liyjXmUnYfa2t52wFVmD6G5CGLEaRM6IA6yHYaolA"
+}
