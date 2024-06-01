@@ -89,7 +89,7 @@ router.put(
         userId: conditions["id"],
       },
     })
-    console.log(user);
+
     if (user !== null) {
       const updatedUser = await db.user.update({
         where: {
