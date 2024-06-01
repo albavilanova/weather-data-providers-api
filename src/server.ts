@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan";
 
 import providersRouter from "./router/providers";
-// import productsRouter from './router/products';
+import productsRouter from './router/products';
 import usersRouter from "./router/users";
 import reviewsRouter from "./router/reviews";
 
@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Set up routers
 app.use("/providers", providersRouter);
-// app.use("/products", productsRouter);
+app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/reviews", reviewsRouter);
 

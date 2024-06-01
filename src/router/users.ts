@@ -76,7 +76,14 @@ router.delete(
 router.put(
   "/",
   catchErrors(async (req, res) => {
-    const args = ["id", "firstName", "lastName", "organization", "position", "email"];
+    const args = [
+      "id",
+      "firstName",
+      "lastName",
+      "organization",
+      "position",
+      "email",
+    ];
     const conditions = checkArgs(req.query, args);
 
     if (!conditions.hasOwnProperty("id")) {
@@ -88,7 +95,7 @@ router.put(
       where: {
         userId: conditions["id"],
       },
-    })
+    });
 
     if (user !== null) {
       const updatedUser = await db.user.update({
@@ -100,7 +107,7 @@ router.put(
           lastName: conditions["lastName"],
           email: conditions["email"],
           organization: conditions["organization"],
-          position: conditions["position"]
+          position: conditions["position"],
         },
       });
       send(res).ok(updatedUser);
