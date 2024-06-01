@@ -5,7 +5,7 @@ import morgan from "morgan";
 import providersRouter from './providers';
 // import productsRouter from './products';
 // import usersRouter from './users';
-// import reviewsRouter from './reviews';
+import reviewsRouter from './reviews';
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/providers", providersRouter);
 // app.use("/products", productsRouter);
 // app.use("/users", usersRouter);
-// app.use("/reviews", reviewsRouter);
+app.use("/reviews", reviewsRouter);
 
 const { PORT } = process.env;
 app.listen(PORT, () => {

@@ -15,7 +15,7 @@ export const checkArgs = function (query: any, args: string[]) {
 export const getProvidersByArgs = async function (query: any) {
   let providers: any;
 
-  // Check which conditions have been passed through command line
+  // Check which conditions have been passed
   const conditions = checkArgs(query, ["name", "headquarters"]);
   if (conditions) {
     // Find providers
@@ -29,4 +29,30 @@ export const getProvidersByArgs = async function (query: any) {
     providers = [];
   }
   return providers;
+};
+
+// Function to get reviews given certain conditions
+export const getReviewsByArgs = async function (query: any) {
+  let reviews: any;
+
+  // Check which conditions have been passed
+  const conditions = checkArgs(query, ["rating"]);
+  if (conditions) {
+    // Get rating as int if it has been passed
+    let rating;
+    if (conditions.hasOwnProperty("rating")) {
+      rating = parseInt(conditions["rating"]);
+    }
+
+    console.log(await db.review.findMany({}));
+    // Find reviews
+    reviews = await db.review.findMany({
+      where: {
+        rating: rating,
+      },
+    });
+  } else {
+    reviews = [];
+  }
+  return reviews;
 };

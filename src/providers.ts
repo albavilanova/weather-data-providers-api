@@ -28,7 +28,7 @@ router.post(
     const args = ["name", "headquarters", "url"];
     [name, headquarters, url].some(function (prop, index) {
       if (prop === undefined || typeof prop !== "string") {
-        return send(res).badRequest(`Not found ${args[index]}`);
+        return send(res).badRequest(`Argument ${args[index]} should be passed`);
       }
     });
 
@@ -48,19 +48,19 @@ router.delete(
   catchErrors(async (req, res) => {
     const providers = await getProvidersByArgs(req.query);
     if (providers.length > 0) {
-      let names: string[] = [];
+      let ids: string[] = [];
       for (const provider of providers) {
         await db.provider.delete({
           where: {
             providerId: provider.providerId,
           },
         });
-        names.push(provider.name);
+        ids.push(provider.providerId);
       }
       send(res).messageOk(
-        names.length === 1
-          ? `Provider ${names} was successfully deleted`
-          : `Providers ${names} were successfully deleted`
+        ids.length === 1
+          ? `Provider with ID ${ids} was successfully deleted`
+          : `Providers with IDs ${ids} were successfully deleted`
       );
     } else {
       send(res).notFound();
@@ -75,7 +75,7 @@ router.put(
     const conditions = checkArgs(req.query, args);
 
     if (!conditions.hasOwnProperty("id")) {
-      send(res).badRequest("Provider id must be passed.");
+      send(res).badRequest("Provider ID must be passed.");
     }
 
     // Check if provider exists
