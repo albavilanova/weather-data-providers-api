@@ -111,7 +111,9 @@ Query parameters:
 
 Example: 
 
+```
 http://localhost:8080/reviews?productName=U.S. Air Quality Forecasts&email=david.gomez@gmail.com&title=Excellent dataset&rating=8&message=Very useful, it would be better if more variables were included
+```
 
 ### 2. Read
 
