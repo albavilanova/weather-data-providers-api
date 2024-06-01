@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T16:27:24.175Z",
+    "dateExported": "2024-06-01T17:33:09.918Z",
     "version": "1.2",
     "folders": [
         {
@@ -11,6 +11,13 @@
             "containerId": "",
             "created": "2024-06-01T12:51:37.733Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Products",
+            "containerId": "",
+            "created": "2024-06-01T17:06:20.643Z",
+            "sortNum": 15000
         },
         {
             "_id": "b24c675c-a1a8-4625-887b-64cc949b6be1",
@@ -416,6 +423,35 @@
             ]
         },
         {
+            "_id": "e47c6648-da3d-4327-a51f-d9f7e33f6afa",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Update user",
+            "url": "http://localhost:8080/users?id=clwwck7qc0001107lc8n38739&organization=Ayala&position=Senior web developer",
+            "method": "PUT",
+            "sortNum": 195000,
+            "created": "2024-06-01T16:53:25.962Z",
+            "modified": "2024-06-01T16:53:25.962Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "clwwck7qc0001107lc8n38739",
+                    "isPath": false
+                },
+                {
+                    "name": "organization",
+                    "value": "Ayala",
+                    "isPath": false
+                },
+                {
+                    "name": "position",
+                    "value": "Senior web developer",
+                    "isPath": false
+                }
+            ]
+        },
+        {
             "_id": "9a79eaa4-f0cb-4178-bdfc-48b9a5a2cee3",
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
@@ -433,7 +469,95 @@
                     "isPath": false
                 }
             ]
+        },
+        {
+            "_id": "6e55ace4-c016-4f33-8476-5f648a81fea2",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Get all products",
+            "url": "http://localhost:8080/products",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-06-01T17:06:35.455Z",
+            "modified": "2024-06-01T17:06:35.455Z",
+            "headers": []
+        },
+        {
+            "_id": "d28fd677-7451-40f0-b97b-6a59f84fd647",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Get products by name",
+            "url": "http://localhost:8080/products?name=U.S. Air Quality Forecasts",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2024-06-01T17:09:36.567Z",
+            "modified": "2024-06-01T17:09:36.567Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "U.S. Air Quality Forecasts",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "da2de575-ee56-4208-ad0b-a5f940ae4053",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Get products by provider",
+            "url": "http://localhost:8080/products?providerName=CustomWeather",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2024-06-01T17:10:15.190Z",
+            "modified": "2024-06-01T17:10:15.190Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "providerName",
+                    "value": "CustomWeather",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "e27684ea-4ab3-4f3a-878c-1e01d54fc68f",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Get products by variables",
+            "url": "http://localhost:8080/products?variables=wind speed, wind direction",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2024-06-01T17:11:18.714Z",
+            "modified": "2024-06-01T17:11:18.714Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "variables",
+                    "value": "wind speed, wind direction",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "0e5fe5c5-525c-4c42-9a98-348e3d575e7a",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "fde9d7bb-4d2e-4048-a217-51f652c927e9",
+            "name": "Delete products by name",
+            "url": "http://localhost:8080/products?name=U.S. Air Quality Forecasts",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2024-06-01T17:29:12.947Z",
+            "modified": "2024-06-01T17:29:12.947Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "U.S. Air Quality Forecasts",
+                    "isPath": false
+                }
+            ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtziX_-bJHr681Z6p_1u9OHfqdnmPwj6KBRcZ4vWzc5gdBl410VuH7BMUiNUdEwZ9WeQ"
+    "ref": "NOFH7gbNbPQ9mOLilNAtzphs7Oh8B8IMeijJHu4Rd5y7T5yy_Vj4vKqILJ_6kEcMMA2M583_nzwdS7-p_R3EaQ"
 }
