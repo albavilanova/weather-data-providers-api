@@ -65,9 +65,17 @@ You can test the API requests below by installing the extension Thunder Client i
 
 Usage:
 
+`POST` `/users`
+
 Query parameters:
 
+`firstName` (mandatory), `lastName` (mandatory), `organization` (mandatory),`position` (mandatory) and `email` (mandatory)
+
 Examples: 
+
+```
+http://localhost:8080/users?firstName=Miguel&lastName=Villarino&organization=Amrum&position=Senior researcher&email=miguel.villarino@amrum.com
+```
 
 **Create a new provider**
 
