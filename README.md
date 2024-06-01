@@ -89,15 +89,25 @@ Query parameters:
 
 Example: 
 
+```
 http://localhost:8080/providers?name=Meteomatics&headquarters=Switzerland&url=https://www.meteomatics.com/
+```
 
 **Create a new product**
 
 Usage:
 
+`POST` `/products`
+
 Query parameters:
 
+`name` (mandatory), `providerName` (mandatory), `variables` (mandatory), `startDate` (mandatory), `endDate` (mandatory) and `formats` (mandatory)
+
 Examples: 
+
+```
+http://localhost:8080/products?providerName=CustomWeather&name=Wind atlas&variables=wind speed, wind direction&startDate=2019-01-01&endDate=2020-12-31&formats=csv
+```
 
 **Create a new review**
 
