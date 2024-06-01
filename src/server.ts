@@ -2,10 +2,10 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 
-import providersRouter from './routers/providers';
-// import productsRouter from './routers/products';
-// import usersRouter from './routers/users';
-import reviewsRouter from './routers/reviews';
+import providersRouter from './router/providers';
+// import productsRouter from './router/products';
+// import usersRouter from './router/users';
+import reviewsRouter from './router/reviews';
 
 const app = express();
 
