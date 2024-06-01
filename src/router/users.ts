@@ -73,4 +73,41 @@ router.delete(
   })
 );
 
+router.put(
+  "/",
+  catchErrors(async (req, res) => {
+    const args = ["id", "firstName", "lastName", "organization", "position", "email"];
+    const conditions = checkArgs(req.query, args);
+
+    if (!conditions.hasOwnProperty("id")) {
+      send(res).badRequest("User ID must be passed.");
+    }
+
+    // Check if user exists
+    const user = await db.user.findUnique({
+      where: {
+        userId: conditions["id"],
+      },
+    })
+    console.log(user);
+    if (user !== null) {
+      const updatedUser = await db.user.update({
+        where: {
+          userId: conditions["id"],
+        },
+        data: {
+          firstName: conditions["firstName"],
+          lastName: conditions["lastName"],
+          email: conditions["email"],
+          organization: conditions["organization"],
+          position: conditions["position"]
+        },
+      });
+      send(res).ok(updatedUser);
+    } else {
+      send(res).notFound();
+    }
+  })
+);
+
 export default router;

@@ -71,7 +71,7 @@ Query parameters:
 
 `firstName` (mandatory), `lastName` (mandatory), `organization` (mandatory),`position` (mandatory) and `email` (mandatory)
 
-Examples: 
+Example: 
 
 ```
 http://localhost:8080/users?firstName=Miguel&lastName=Villarino&organization=Amrum&position=Senior researcher&email=miguel.villarino@amrum.com
@@ -87,7 +87,7 @@ Query parameters:
 
 `name` (mandatory), `headquarters` (mandatory) and `url` (mandatory)
 
-Examples: 
+Example: 
 
 http://localhost:8080/providers?name=Meteomatics&headquarters=Switzerland&url=https://www.meteomatics.com/
 
@@ -109,7 +109,7 @@ Query parameters:
 
 `productName` (mandatory), `email` (mandatory), `title` (mandatory), `rating` (mandatory) and `message` (mandatory)
 
-Examples: 
+Example: 
 
 http://localhost:8080/reviews?productName=U.S. Air Quality Forecasts&email=david.gomez@gmail.com&title=Excellent dataset&rating=8&message=Very useful, it would be better if more variables were included
 
@@ -208,9 +208,17 @@ http://localhost:8080/providers?id=3&name=Meteomatics AG
 
 Usage:
 
+`PUT` `/users`
+
 Query parameters:
 
+`id` (mandatory), `firstName` (optional), `lastName` (optional), `email` (optional), `organization` (optional) and `position` (optional)
+
 Examples: 
+
+```
+http://localhost:8080/users?id=clwwck7qc0001107lc8n38739&organization=Ayala&position=Senior web developer
+```
 
 **Update reviews**
 
@@ -234,9 +242,20 @@ http://localhost:8080/reviews?id=1&rating=5&message=I have noticed that the data
 
 Usage:
 
+`DELETE` `/users`
+
 Query parameters:
 
+`firstName` (optional), `lastName` (optional), `email` (optional), `organization` (optional), `position` (optional), `startDate` (optional) and `endDate` (optional)
+
 Examples: 
+
+```
+http://localhost:8080/users?email=david.gomez@gmail.com
+http://localhost:8080/users?position=Research engineer
+http://localhost:8080/users?firstName=Alba&lastName=Vilanova&organization=BSC
+http://localhost:8080/users?startDate=2024-05-01&endDate=2024-05-31
+```
 
 **Delete providers**
 
