@@ -1,6 +1,6 @@
 # Weather Data Providers API
 
-This repository will be the API to retrieve information of different weather data providers using the database that was created in advance in https://github.com/albavilanova/weather-data-providers.
+This repository is the API to retrieve information of different weather data providers using the database that was created in advance in https://github.com/albavilanova/weather-data-providers.
 
 ## Initialization
 
@@ -54,6 +54,8 @@ Start listening in the server in port 8080:
 ```
 bun run dev
 ```
+
+You can test the API requests below by installing the extension Thunder Client in VS Code and importing the JSON file found in the folder `thunder-client`.
 
 ## API endpoints to test CRUD operations:
 
@@ -109,9 +111,21 @@ http://localhost:8080/reviews?productName=U.S. Air Quality Forecasts&email=david
 
 Usage:
 
-Query parameters:
+`GET` `/users`
 
-Examples: 
+Query parameters: 
+
+`firstName` (optional), `lastName` (optional), `email` (optional), `organization` (optional), `position` (optional), `startDate` (optional) and `endDate` (optional)
+
+Examples:
+
+```
+http://localhost:8080/users
+http://localhost:8080/users?email=david.gomez@gmail.com
+http://localhost:8080/users?position=Research engineer
+http://localhost:8080/users?firstName=Alba&lastName=Vilanova&organization=BSC
+http://localhost:8080/users?startDate=2024-05-01&endDate=2024-12-31
+```
 
 **Find providers**
 

@@ -11,6 +11,54 @@ export const checkArgs = function (query: any, args: string[]) {
   return conditions;
 };
 
+// Function to get users given certain conditions
+export const getUsersByArgs = async function (query: any) {
+  let users: any;
+
+  // Check which conditions have been passed through command line
+  const conditions = checkArgs(query, [
+    "firstName",
+    "lastName",
+    "email",
+    "organization",
+    "position",
+    "startDate",
+    "endDate",
+  ]);
+  if (conditions) {
+    // Create dates
+    let startDate;
+    let endDate;
+    if (conditions.hasOwnProperty("startDate")) {
+      startDate = new Date(conditions["startDate"]);
+      console.log(`Start date converted to ${startDate}`);
+    }
+    if (conditions.hasOwnProperty("endDate")) {
+      endDate = new Date(conditions["endDate"]);
+      console.log(`End date converted to ${endDate}`);
+    }
+
+    // Find users
+    users = await db.user.findMany({
+      where: {
+        firstName: conditions["firstName"],
+        lastName: conditions["lastName"],
+        email: conditions["email"],
+        organization: conditions["organization"],
+        position: conditions["position"],
+        createdAt: {
+          gte: startDate,
+          lte: endDate,
+        },
+      },
+    });
+  } else {
+    users = [];
+  }
+
+  return users;
+};
+
 // Function to get providers given certain conditions
 export const getProvidersByArgs = async function (query: any) {
   let providers: any;

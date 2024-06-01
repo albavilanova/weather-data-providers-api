@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T14:32:36.599Z",
+    "dateExported": "2024-06-01T15:44:01.441Z",
     "version": "1.2",
     "folders": [
         {
@@ -18,6 +18,13 @@
             "containerId": "",
             "created": "2024-06-01T12:52:00.777Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-06-01T15:00:30.401Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
@@ -265,7 +272,110 @@
                     "isPath": false
                 }
             ]
+        },
+        {
+            "_id": "bb6181c6-bb80-4fe9-b52f-f878fd78c92a",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Get all users",
+            "url": "http://localhost:8080/users",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-06-01T15:00:48.518Z",
+            "modified": "2024-06-01T15:00:48.518Z",
+            "headers": []
+        },
+        {
+            "_id": "6bcad3e6-cb86-4992-8101-b2f16639eaae",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Get user by email",
+            "url": "http://localhost:8080/users?email=david.gomez@gmail.com",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-06-01T15:38:39.791Z",
+            "modified": "2024-06-01T15:38:39.791Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "david.gomez@gmail.com",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "780fd8db-3e45-4f77-9d0b-7318e2c974b3",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Get users by position",
+            "url": "http://localhost:8080/users?position=Research engineer",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-06-01T15:39:22.793Z",
+            "modified": "2024-06-01T15:40:12.040Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "position",
+                    "value": "Research engineer",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "cb15f076-36db-4059-adeb-f5afc5766aaa",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Get users by full name and organization",
+            "url": "http://localhost:8080/users?firstName=Alba&lastName=Vilanova&organization=BSC",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-06-01T15:40:47.147Z",
+            "modified": "2024-06-01T15:40:47.147Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "firstName",
+                    "value": "Alba",
+                    "isPath": false
+                },
+                {
+                    "name": "lastName",
+                    "value": "Vilanova",
+                    "isPath": false
+                },
+                {
+                    "name": "organization",
+                    "value": "BSC",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "8d0a2c4d-8377-454f-ae8e-f8c52702dc05",
+            "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
+            "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
+            "name": "Get users by creation date",
+            "url": "http://localhost:8080/users?startDate=2024-05-01&endDate=2024-12-31",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2024-06-01T15:43:33.781Z",
+            "modified": "2024-06-01T15:43:33.781Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "startDate",
+                    "value": "2024-05-01",
+                    "isPath": false
+                },
+                {
+                    "name": "endDate",
+                    "value": "2024-12-31",
+                    "isPath": false
+                }
+            ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtzhJEAz6cHEQyzLTB9f4DEnOe8P--zYpLd2ihVIts-RfGimv0yCZB1L2UWxoSOSw0fQ"
+    "ref": "NOFH7gbNbPQ9mOLilNAtzvmVat-kp7BoTRw3c8ofAVsD_JzJHk5Bi4-Wc1A7DUqgyMwZ6gJYhRrtnj3mVlwV9w"
 }
