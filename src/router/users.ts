@@ -48,4 +48,29 @@ router.post(
   })
 );
 
+router.delete(
+  "/",
+  catchErrors(async (req, res) => {
+    const users = await getUsersByArgs(req.query);
+    if (users.length > 0) {
+      let ids: string[] = [];
+      for (const user of users) {
+        await db.user.delete({
+          where: {
+            userId: user.userId,
+          },
+        });
+        ids.push(user.userId);
+      }
+      send(res).messageOk(
+        ids.length === 1
+          ? `User with ID ${ids} was successfully deleted`
+          : `Users with IDs ${ids} were successfully deleted`
+      );
+    } else {
+      send(res).notFound();
+    }
+  })
+);
+
 export default router;
