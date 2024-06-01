@@ -52,5 +52,206 @@ bunx prisma studio
 Start listening in the server in port 8080:
 
 ```
-bun run src/server.ts
+bun run dev
+```
+
+## API endpoints to test CRUD operations:
+
+### 1. Create
+
+**Create a new user**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Create a new provider**
+
+Usage:
+
+`POST` `/providers`
+
+Query parameters: 
+
+`name` (mandatory), `headquarters` (mandatory) and `url` (mandatory)
+
+Examples: 
+
+http://localhost:8080/providers?name=Meteomatics&headquarters=Switzerland&url=https://www.meteomatics.com/
+
+**Create a new product**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Create a new review**
+
+Usage:
+
+`POST` `reviews`
+
+Query parameters: 
+
+`productName` (mandatory), `email` (mandatory), `title` (mandatory), `rating` (mandatory) and `message` (mandatory)
+
+Examples: 
+
+http://localhost:8080/reviews?productName=U.S. Air Quality Forecasts&email=david.gomez@gmail.com&title=Excellent dataset&rating=8&message=Very useful, it would be better if more variables were included
+
+### 2. Read
+
+**Find users**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Find providers**
+
+Usage:
+
+`GET` `/providers`
+
+Query parameters: 
+
+`name` (optional) and `headquarters` (optional)
+
+Examples:
+
+```
+http://localhost:8080/providers
+http://localhost:8080/providers?name=CustomWeather
+http://localhost:8080/providers?headquarters=Czech Republic
+```
+
+**Find products**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Find reviews**
+
+Usage:
+
+`GET` `/reviews`
+
+Query parameters: 
+
+`productName` (optional), `email` (optional),  `title` (optional), `rating` (optional) and `message` (optional)
+
+Examples:
+
+```
+http://localhost:8080/reviews
+http://localhost:8080/reviews?rating=10
+```
+
+### 3. Update
+
+**Update users**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Update providers**
+
+Usage:
+
+`PUT` `/providers`
+
+Query parameters: 
+
+`id` (mandatory), `name` (optional), `headquarters` (optional) and `url` (optional)
+
+Example: 
+
+```
+http://localhost:8080/providers?id=3&name=Meteomatics AG
+```
+
+**Update products**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Update reviews**
+
+Usage:
+
+`PUT` `/reviews`
+
+Query parameters: 
+
+`id` (mandatory), `productName` (optional), `email` (optional),  `title` (optional), `rating` (optional) and `message` (optional)
+
+Example: 
+
+```
+http://localhost:8080/reviews?id=1&rating=5&message=I have noticed that the data have wrong units&title=Wrong units
+```
+
+### 4. Delete
+
+**Delete users**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Delete providers**
+
+Usage:
+
+`DELETE` `/providers`
+
+Query parameters: 
+
+`name` (optional), `headquarters` (optional) and `url` (optional)
+
+Example: 
+
+```
+http://localhost:8080/providers?headquarters=Czech Republic
+```
+
+**Delete products**
+
+Usage:
+
+Query parameters:
+
+Examples: 
+
+**Delete reviews**
+
+Usage:
+
+`DELETE` `/reviews`
+
+Query parameters: 
+
+`rating` (optional)
+
+Example: 
+
+```
+http://localhost:8080/reviews?rating=8
 ```
