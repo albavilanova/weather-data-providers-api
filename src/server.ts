@@ -2,10 +2,10 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 
-import providersRouter from './router/providers';
+import providersRouter from "./router/providers";
 // import productsRouter from './router/products';
-// import usersRouter from './router/users';
-import reviewsRouter from './router/reviews';
+import usersRouter from "./router/users";
+import reviewsRouter from "./router/reviews";
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(express.json());
 // Set up routers
 app.use("/providers", providersRouter);
 // app.use("/products", productsRouter);
-// app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 app.use("/reviews", reviewsRouter);
 
 const { PORT } = process.env;

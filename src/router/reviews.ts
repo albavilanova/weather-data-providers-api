@@ -112,7 +112,7 @@ router.put(
     // Convert rating to int
     let ratingNumber;
     if (conditions.hasOwnProperty("rating")) {
-      ratingNumber = parseInt(conditions["rating"])
+      ratingNumber = parseInt(conditions["rating"]);
     }
 
     if (review !== null) {
@@ -125,7 +125,7 @@ router.put(
           email: conditions["email"],
           title: conditions["title"],
           rating: ratingNumber,
-          message: conditions["message"]
+          message: conditions["message"],
         },
       });
       send(res).ok(updatedReview);

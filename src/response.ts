@@ -15,9 +15,10 @@ export const send = (res: ExpressResponse) => {
     messageOk: (msg: string) => res.status(HttpStatusCode.OK).json(msg),
     createOk: (data: any) => res.status(HttpStatusCode.Created).send(data),
     notFound: () => res.status(HttpStatusCode.NotFound).send(`Not found.`),
-    badRequest: (msg: string) => res.status(HttpStatusCode.BadRequest).send(msg),
+    badRequest: (msg: string) =>
+      res.status(HttpStatusCode.BadRequest).send(msg),
     notImplemented: () =>
-        res.status(HttpStatusCode.NotImplemented).send(`Not implemented.`),
+      res.status(HttpStatusCode.NotImplemented).send(`Not implemented.`),
     internalError: (msg: string) =>
       res.status(HttpStatusCode.InternalServerError).send(msg),
   };
