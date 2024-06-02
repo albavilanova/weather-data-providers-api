@@ -4,22 +4,6 @@ This repository is the API to retrieve information of different weather data pro
 
 ## Initialization
 
-Create and run the Postgres container by using:
-
-```
-docker compose -f compose.yml up
-```
-
-Get the container ID (hash) of the running container by: 
-``` 
-docker ps -a
-```
-
-And proceed to inspect it to find the corresponding IP address:
-```
-docker inspect <hash>
-```
-
 Create an .env file containing:
 
 ```
@@ -28,10 +12,7 @@ DIRECT_URL="postgres://postgres.[your-supabase-project]:[password]@aws-0-[aws-re
 PORT=8080
 ```
 
-And start:
-```
-docker start <hash>
-``` 
+The credentials can be obtained by creating a free account in [Supabase](https://supabase.com/).
 
 Install the dependencies, generate and push the schema and seed the database: 
 
@@ -42,7 +23,7 @@ bunx prisma db push
 bunx prisma db seed
 ```
 
-This will create two data providers - one with one product and another one with two - two users and a review for one of the datasets.
+This will create two data providers - one with one product and another one with two - two users and reviews for some datasets.
 
 You can now check its content with:
 
