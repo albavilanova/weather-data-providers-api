@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Providers API",
     "collectionId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
-    "dateExported": "2024-06-01T19:11:56.202Z",
+    "dateExported": "2024-06-02T10:37:18.604Z",
     "version": "1.2",
     "folders": [
         {
@@ -427,16 +427,16 @@
             "colId": "327bf3e4-f36c-4cef-b15e-6c44832ba642",
             "containerId": "4570f594-a14f-4c7b-9b4e-4cf18964a015",
             "name": "Update user",
-            "url": "http://localhost:8080/users?id=clwwhntqj0000qwaej8scywia&organization=Ayala&position=Senior web developer",
+            "url": "http://localhost:8080/users?id=1&organization=Ayala&position=Senior web developer",
             "method": "PUT",
             "sortNum": 195000,
             "created": "2024-06-01T16:53:25.962Z",
-            "modified": "2024-06-01T19:11:37.043Z",
+            "modified": "2024-06-02T10:35:34.933Z",
             "headers": [],
             "params": [
                 {
                     "name": "id",
-                    "value": "clwwhntqj0000qwaej8scywia",
+                    "value": "1",
                     "isPath": false
                 },
                 {
@@ -632,5 +632,5 @@
             ]
         }
     ],
-    "ref": "NOFH7gbNbPQ9mOLilNAtznyhTJlvOAduIKFhN1pM5Io1twd3JhvtzjM7AQxVXG6I1SCj0Q8dP7vLzJZuW0lljA"
+    "ref": "NOFH7gbNbPQ9mOLilNAtzq3wYLHy0wVfyAf0hBzMEHxrKWUGpf7E9BnI5jyofcrWSKblJiqzjxi6BDzyTYgsCQ"
 }

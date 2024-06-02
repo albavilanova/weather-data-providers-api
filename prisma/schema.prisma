@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Provider {
@@ -29,7 +30,7 @@ model Product {
 }
 
 model User {
-  userId       String    @id @default(cuid())
+  userId       Int       @id @default(autoincrement())
   firstName    String
   lastName     String
   organization String
@@ -45,7 +46,7 @@ model Review {
   title     String
   message   String?
   rating    Int
-  userId    String
+  userId    Int
   user      User    @relation(fields: [userId], references: [userId], onDelete: Cascade)
   productId Int
   product   Product @relation(fields: [productId], references: [productId], onDelete: Cascade)

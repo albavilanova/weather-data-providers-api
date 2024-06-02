@@ -93,14 +93,14 @@ router.put(
     // Check if user exists
     const user = await db.user.findUnique({
       where: {
-        userId: conditions["id"],
+        userId: parseInt(conditions["id"]),
       },
     });
 
     if (user !== null) {
       const updatedUser = await db.user.update({
         where: {
-          userId: conditions["id"],
+          userId: parseInt(conditions["id"]),
         },
         data: {
           firstName: conditions["firstName"],
