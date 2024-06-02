@@ -23,8 +23,9 @@ docker inspect <hash>
 Create an .env file containing:
 
 ```
-DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
-PORT="8080"
+DATABASE_URL="postgres://postgres.[your-supabase-project]:[password]@aws-0-[aws-region].pooler.supabase.com:6543/postgres?pgbouncer=true"
+DIRECT_URL="postgres://postgres.[your-supabase-project]:[password]@aws-0-[aws-region].pooler.supabase.com:5432/postgres"
+PORT=8080
 ```
 
 And start:
